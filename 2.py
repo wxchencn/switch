@@ -3,7 +3,7 @@ Description:
 Version: 1.0
 Autor: wxchen
 Date: 2020-08-06 17:10:54
-LastEditTime: 2020-08-06 21:45:58
+LastEditTime: 2020-08-25 16:54:40
 '''
 
 import sys
@@ -37,7 +37,7 @@ result = img.copy()
 for line in lines:
     
     x1,y1,x2,y2 = line[0]
-    cv2.line(result, (x1,y1),(x2,y2),(255,0,0),2)
+    cv2.line(result, (x1,y1),(x2,y2),(255,0,0),1)
 #	rho, theta = line[0]
 
 	# if  (theta < (np.pi/4. )) or (theta > (3.*np.pi/4.0)): #垂直直线
@@ -55,7 +55,8 @@ for line in lines:
 	# 	#绘制一条直线
 	# 	cv2.line(result, pt1, pt2, (255), 1)
 
+cv2.imwrite("a.png", result)
 
-cv2.imshow("img", result)
+cv2.imshow("img", img_bin)
 if cv2.waitKey(0) == ord("x"):
     cv2.destroyAllWindows()
